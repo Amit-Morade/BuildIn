@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Link } from "@mui/material";
-import abc from "../../abc.jpg";
+// import abc from "../../abc.jpg";
 
 export default function PostCard({ text, pic }: { text: string; pic?: boolean }) {
     const [showMore, setShowMore] = useState(false);
@@ -45,14 +45,14 @@ export default function PostCard({ text, pic }: { text: string; pic?: boolean })
                         )}
                     </Typography>
                 </CardContent>
-                {pic && (
+                {/* {pic && (
                     <CardMedia
                         component="img"
                         height="140"
                         image={abc}
                         alt="green iguana"
                     />
-                )}
+                )} */}
             
         </Card>
     );
