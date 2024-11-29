@@ -1,12 +1,20 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Login from "./Login"
 import { userLoginIn } from "../utilities/firebase"
+import UserContext from "./UserProvider"
+import { useNavigate } from "react-router-dom"
 
 export default function LoginPage() {
-    const [user, setUser] = useState(null)
+    const {setUser} = useContext(UserContext)
+    const navigate = useNavigate()
 
-    const handleUserLogin = (email: string, password: string) => {
-        userLoginIn(email, password)
+    const handleUserLogin = async (email: string, password: string) => {
+        const user = await userLoginIn(email, password)
+        if(user) {
+            setUser(user)
+            navigate("/home")
+        }
+        
     }
 
     return (
