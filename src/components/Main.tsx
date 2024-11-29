@@ -31,7 +31,7 @@ export default function Main() {
     // }, [])
 
     return (
-        <div style={{height: "100%", display: "flex", flexDirection: "column" }}>
+        <div style={{height: "100%", display: "flex", flexDirection: "column", paddingBottom: "50px", boxSizing: "border-box" }}>
             <Header />
             <Routes>
                 <Route path="/" element={<LoginPage />} />
