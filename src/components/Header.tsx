@@ -37,7 +37,7 @@ export default function Header() {
                 <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     <span onClick={() => navigate("/home")} style={{cursor: "pointer"}}>
-                        StudyConnect
+                        BuildIn
                     </span>
                 </Typography>
                 
