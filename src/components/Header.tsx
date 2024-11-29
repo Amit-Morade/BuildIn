@@ -19,7 +19,6 @@ export default function Header() {
             const subscriber = auth.onAuthStateChanged(function(user) {
                 if(user) {
                     setUser(user)
-                    console.log(user)
                 }else {
                     navigate("/")
                 }
@@ -37,7 +36,9 @@ export default function Header() {
             <AppBar position="static">
                 <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    StudyConnect
+                    <span onClick={() => navigate("/home")} style={{cursor: "pointer"}}>
+                        StudyConnect
+                    </span>
                 </Typography>
                 
                 {user ? (
