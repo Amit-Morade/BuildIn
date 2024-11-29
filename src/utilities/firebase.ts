@@ -18,18 +18,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth()
 
-export function userLoginIn(email: string, password: string) {
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+export async function userLoginIn(email: string, password: string) {
+    try{
+        const response = await signInWithEmailAndPassword(auth, email, password)
+        return response.user
+    }catch (error) {
         console.log(error)
-    });
+    }
+    
+    // .then((userCredential) => {
+    //     // Signed in 
+    //     const user = userCredential.user;
+    //     // ...
+    // })
+    
 }
 
 export async function userSignOut() {
