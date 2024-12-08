@@ -6,33 +6,18 @@ import Button from '@mui/material/Button';
 import { userSignOut, auth } from '../utilities/firebase';
 import { useContext, useEffect } from 'react';
 import UserContext from './UserProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 
 
 export default function Header() {
     const { user, setUser } = useContext(UserContext)
     const navigate = useNavigate()
+    const location = useLocation();
 
-    useEffect(() => {
-        try{
-            const subscriber = auth.onAuthStateChanged(function(user) {
-                if(user) {
-                    setUser(user)
-                }else {
-                    navigate("/")
-                }
-            })
-    
-            return () => subscriber()
-        }catch(e) {
-            console.log(e)
-        }
-        
-    }, [])
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box>
             <AppBar position="static" sx={{background: "#2a2d3d"}}>
                 <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
