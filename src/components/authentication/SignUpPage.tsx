@@ -10,8 +10,6 @@ export default function SignUpPage() {
   const navigate = useNavigate();
 
   const handleUserSignUp = async (email: string, password: string) => {
-    navigate("/onboarding")
-
     const {user, error} = await userSignUp(email, password);
     if (!error) {
       setUser(user);
