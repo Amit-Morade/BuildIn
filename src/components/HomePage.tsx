@@ -4,6 +4,8 @@ import { Alert, Box, Button, Divider, IconButton, InputBase, Modal, Paper, TextF
 import PostCard from "./posts/PostCard";
 import SearchIcon from '@mui/icons-material/Search';
 import { Height } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const style = {
   position: 'absolute',
@@ -18,7 +20,6 @@ const style = {
 };
 
 export default function Home() {
-  const { user } = useContext(UserContext);
   const [displayCreatePost, setDisplayCreatePost] = useState(false)
   const [error, setError] = useState("")
 

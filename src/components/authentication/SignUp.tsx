@@ -5,8 +5,8 @@ import Divider from "@mui/material/Divider";
 import { Paper } from "@mui/material";
 import React, { useState } from "react";
 
-export default function Login({
-  onUserLogin: handleUserLogin,
+export default function SignUp({
+  onUserLogin: handleUserSignUp,
 }: {
   onUserLogin: (email: string, password: string) => void;
 }) {
@@ -24,11 +24,7 @@ export default function Login({
       }}
       elevation={0}
     >
-      <Typography variant="h2">Welcome Back!</Typography>
-      <p>
-        Login to reconnect with your community, share your insights, and
-        collaborate with amazing minds today!
-      </p>
+      <Typography variant="h2">Welcome to BuildIn</Typography>
       <form
         style={{
           display: "flex",
@@ -40,7 +36,7 @@ export default function Login({
         }}
         onSubmit={(e) => {
           e.preventDefault();
-          handleUserLogin(email, password);
+          handleUserSignUp(email, password);
         }}
       >
         <TextField
@@ -76,20 +72,8 @@ export default function Login({
             background: "#2a2d3d",
           }}
         >
-          Log In
+          Sign Up
         </Button>
-        <Link
-          style={{
-            textTransform: "none",
-            textDecoration: "none",
-            fontSize: "16px",
-            textAlign: "center",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-        >
-          Forgot password?
-        </Link>
       </form>
       <Divider></Divider>
       <CardActions
@@ -100,15 +84,15 @@ export default function Login({
           padding: "0px",
         }}
       >
-        <span>Don't have an account?</span>
+        <span>Already a user?</span>
         <Link
-          href="#"
+          href="/"
           sx={{
             textDecorationLine: "none",
             fontWeight: "bold",
           }}
         >
-          Create new account
+          Login
         </Link>
       </CardActions>
     </Paper>
