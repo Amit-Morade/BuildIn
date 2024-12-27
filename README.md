@@ -2,6 +2,10 @@
 
 # **Project Collaboration Platform**
 
+## Collaborators:
+1. Amit Morade (Project Author + Full Stack Developer)
+2. Siddhi Jadhav (FrontEnd Dev)
+
 ## **Overview**
 
 The **Project Collaboration Platform** is designed to bring together students, professionals, and enthusiasts to collaborate on projects, share ideas, and build meaningful connections. Whether you're seeking team members, feedback, or a space to showcase your work, this platform is the perfect hub for creative minds and innovators.
